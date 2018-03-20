@@ -5,7 +5,7 @@
 int main()
 {
     const int MAX = 100, MIN = 1;
-    int nombreChoisi = 0, continueGame = 1, nombreRandom = 0;
+    int nombreChoisi = 0, continueGame = 1, nombreRandom = 0, nombreEssais = 0;
 
     srand(time(NULL));
     nombreRandom = (rand() % (MAX - MIN + 1)) + MIN;
@@ -17,7 +17,7 @@ int main()
             printf("Veuillez choisir votre nombre :\n");
 
             scanf("%d", &nombreChoisi);
-
+            nombreEssais++;
 
             if (nombreChoisi > nombreRandom )
             {
@@ -29,10 +29,11 @@ int main()
             }
                 else if (nombreChoisi == nombreRandom)
             {
-                    printf("Felicitations ! Vous avez trouve le nombre !\n Voulez-vous continuer ?\n");
+                    printf("Felicitations ! Vous avez trouve le nombre !\n Vous avez fait %d essais ! \n Voulez-vous continuer ?\n", nombreEssais);
                     scanf("%d", &continueGame);
                     if (continueGame == 1) {
                         nombreRandom = (rand() % (MAX - MIN + 1)) + MIN;
+                        nombreEssais = 0;
                     }
             }
 
