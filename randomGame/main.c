@@ -5,33 +5,38 @@
 int main()
 {
     const int MAX = 100, MIN = 1;
-    int nombreChoisi = 0;
+    int nombreChoisi = 0, continueGame = 1, nombreRandom = 0;
 
     srand(time(NULL));
-    int nombreRandom = (rand() % (MAX - MIN + 1)) + MIN;
+    nombreRandom = (rand() % (MAX - MIN + 1)) + MIN;
 
-    printf("le nombre mystere a ete choisi. cest:  %d\n", nombreRandom);
-    printf("Veuillez choisir votre nombre :\n");
-
-    scanf("%d", &nombreChoisi);
-
-    while (nombreChoisi != nombreRandom)
+    do
     {
-        if (nombreChoisi > nombreRandom )
-        {
-            printf ("trop haut !\n Essayez encore !\n");
-            scanf("%d", &nombreChoisi);
-        } else if (nombreChoisi < nombreRandom)
-        {
-            printf("Trop bas !\n Essayez encore !\n");
-            scanf("%d", &nombreChoisi);
-        }
-    }
 
-    if (nombreChoisi == nombreRandom)
-    {
-        printf("Felicitations ! Vous avez trouve le nombre !");
-    }
+            printf("le nombre mystere a ete choisi. cest:  %d\n", nombreRandom);
+            printf("Veuillez choisir votre nombre :\n");
+
+            scanf("%d", &nombreChoisi);
+
+
+            if (nombreChoisi > nombreRandom )
+            {
+                    printf ("trop haut !\n Essayez encore !\n");
+            }
+                else if (nombreChoisi < nombreRandom)
+            {
+                    printf("Trop bas !\n Essayez encore !\n");
+            }
+                else if (nombreChoisi == nombreRandom)
+            {
+                    printf("Felicitations ! Vous avez trouve le nombre !\n Voulez-vous continuer ?\n");
+                    scanf("%d", &continueGame);
+                    if (continueGame == 1) {
+                        nombreRandom = (rand() % (MAX - MIN + 1)) + MIN;
+                    }
+            }
+
+    } while (continueGame == 1);
 
     return 0;
 }
