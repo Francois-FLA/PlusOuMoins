@@ -33,10 +33,8 @@ printf("Veuilly choisir la difficulte :\n 1. Entre 1 et 100\n 2. Entre 1 et 1000
         break;
     }
 
-
-
     do
-    {
+        {
 
             printf("le nombre mystere a ete choisi. cest:  %d\n", nombreRandom);
             printf("Veuillez choisir votre nombre :\n");
@@ -62,7 +60,7 @@ printf("Veuilly choisir la difficulte :\n 1. Entre 1 et 100\n 2. Entre 1 et 1000
                     }
             }
 
-    } while (continueGame == 1);
+        } while (continueGame == 1);
 
     return 0;
 }
