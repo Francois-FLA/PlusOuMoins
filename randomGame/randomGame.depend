@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1521566288 source:/Users/francoislaffon/Desktop/devC/PlusOuMoins/randomGame/main.c
-	<stdio.h>
-	<stdlib.h>
-	<time.h>
-
