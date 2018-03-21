@@ -50,7 +50,7 @@ printf("Veuilly choisir la difficulte :\n 1. Entre 1 et 100\n 2. Entre 1 et 1000
             }
                 else if (nombreChoisi == nombreRandom)
             {
-                    printf("Felicitations ! Vous avez trouve le nombre !\n Vous avez fait %d essais ! \n Voulez-vous continuer ?\n", nombreEssais);
+                    printf("Felicitations ! Vous avez trouve le nombre !\n Vous avez fait %d essais ! \n Voulez-vous continuer ? \n (1 = Oui, 2 = Non)\n", nombreEssais);
                     scanf("%d", &continueGame);
                     if (continueGame == 1) {
                         nombreRandom = (rand() % (max - MIN + 1)) + MIN;
